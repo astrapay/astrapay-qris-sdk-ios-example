@@ -1,0 +1,116 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name AstraPayQrisSdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import AVFoundation
+import AVKit
+@_exported import AstraPayQrisSdk
+import ContactsUI
+import CoreGraphics
+import CoreImage
+import DeveloperToolsSupport
+import Foundation
+import Photos
+import Swift
+import SwiftUI
+import UIKit
+import UserNotifications
+import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum BuildMode {
+  case sit
+  case uat
+  case prod
+  public static func == (a: AstraPayQrisSdk.BuildMode, b: AstraPayQrisSdk.BuildMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class QRConfigurationSdk {
+  public static var AUTH_TOKEN: Swift.String
+  public static var SDK_TOKEN: Swift.String
+  public static var BUILD_MODE: AstraPayQrisSdk.BuildMode
+  public static var isLoproVoucherAvailable: Swift.Bool
+  public static var isPaylaterAvailable: Swift.Bool
+  public static var loproVersion: Swift.Int
+  public static var otpVersion: Swift.Bool
+  public static var qrisConfirmationVersion: Swift.Int
+  public static var isSnap: Swift.Bool
+  public static var qrisCpm: Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class QRNewRouter {
+  public static let sharedInstance: AstraPayQrisSdk.QRNewRouter
+  public var delegate: (any AstraPayQrisSdk.QRProtocolSdk)?
+  public func navigateToQrScan(from vc: UIKit.UIViewController)
+  public func presentQrScan(from vc: UIKit.UIViewController)
+  public func popToQrScanner(from vc: UIKit.UIViewController)
+  @objc deinit
+}
+public protocol ApOtpDelegate : AnyObject {
+  func onOtpSuccess(_ response: Any, otpId: Swift.Int)
+  func onOtpError(_ response: Any)
+  func onUnauthorized()
+  func onBackPressed()
+}
+public protocol ApOtpDatasource {
+  func getResendOtpRequest(_ phoneNumber: Swift.String, _ mechanism: AstraPayQrisSdk.OtpMechanism, _ accessSession: Swift.String) -> Any
+  func getVerifyOtpRequest(_ phoneNumber: Swift.String, _ mechanism: AstraPayQrisSdk.OtpMechanism, _ otpId: Swift.Int, _ otpValue: Swift.String, _ accessSession: Swift.String) -> Any
+  func getResendOtpPath() -> Swift.String
+  func getVerifyOtpPath(_ otpId: Swift.Int, _ accessSession: Swift.String) -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class ApOtp {
+  weak public var delegate: (any AstraPayQrisSdk.ApOtpDelegate)?
+  public var dataSource: (any AstraPayQrisSdk.ApOtpDatasource)?
+  public static func initOtpConfig(source: UIKit.UIViewController, mechanism: AstraPayQrisSdk.OtpMechanism, phoneNumber: Swift.String, limitRetryIn: Swift.Int, isLocked: Swift.Bool, otpId: Swift.Int, accessSession: Swift.String = "", transactionToken: Swift.String = "", event: AstraPayQrisSdk.AuthenticationClaim) -> AstraPayQrisSdk.ApOtp
+  public func checkIsOtpAvailable(initOtpRequest: @escaping (_ phoneNumber: Swift.String, _ mechanism: AstraPayQrisSdk.OtpMechanism) -> Swift.Void)
+  public func doOtpValidation()
+  @objc deinit
+}
+public enum AuthenticationClaim : Swift.String, Swift.Codable {
+  case REGISTRATION
+  case LOGIN
+  case QRIS_TRANSACTION
+  case FORGOT_PIN
+  case EKYC
+  case BANK_TRANSFER
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum OtpMechanism : Swift.String, Swift.Codable {
+  case EMAIL
+  case SMS
+  case WHATSAPP
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class AnalyticMoEngageConfig {
+  public static func setup()
+  public static func refresh()
+  @objc deinit
+}
+public protocol QRProtocolSdk {
+  func onForbidden(viewController: UIKit.UIViewController)
+  func onComplete(viewController: UIKit.UIViewController)
+  func onFailed(viewController: UIKit.UIViewController)
+  func onShowHistory(viewController: UIKit.UIViewController)
+  func onProcessing(viewController: UIKit.UIViewController)
+  func onCancel(viewController: UIKit.UIViewController)
+}
+extension AstraPayQrisSdk.BuildMode : Swift.Equatable {}
+extension AstraPayQrisSdk.BuildMode : Swift.Hashable {}
+extension AstraPayQrisSdk.AuthenticationClaim : Swift.Equatable {}
+extension AstraPayQrisSdk.AuthenticationClaim : Swift.Hashable {}
+extension AstraPayQrisSdk.AuthenticationClaim : Swift.RawRepresentable {}
+extension AstraPayQrisSdk.OtpMechanism : Swift.Equatable {}
+extension AstraPayQrisSdk.OtpMechanism : Swift.Hashable {}
+extension AstraPayQrisSdk.OtpMechanism : Swift.RawRepresentable {}
