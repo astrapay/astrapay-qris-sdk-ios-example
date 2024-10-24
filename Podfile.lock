@@ -1,0 +1,41 @@
+PODS:
+  - astrapay-qris (0.5.7)
+  - MoEngage-iOS-SDK (9.16.2)
+  - MoEngageGeofence (5.15.0):
+    - MoEngage-iOS-SDK (< 9.17.0, >= 9.16.0)
+  - MoEngageInApp (4.15.0):
+    - MoEngage-iOS-SDK (< 9.17.0, >= 9.16.0)
+  - MoEngageInbox (2.15.1):
+    - MoEngage-iOS-SDK (< 9.17.0, >= 9.16.0)
+    - MoEngageRichNotification (< 7.16.0, >= 7.15.0)
+  - MoEngageRichNotification (7.15.0):
+    - MoEngage-iOS-SDK (< 9.17.0, >= 9.16.0)
+
+DEPENDENCIES:
+  - astrapay-qris (= 0.5.7)
+  - MoEngage-iOS-SDK (~> 9.16.2)
+  - MoEngageGeofence (~> 5.15.0)
+  - MoEngageInApp (~> 4.15.0)
+  - MoEngageInbox (~> 2.15.0)
+  - MoEngageRichNotification (~> 7.15.0)
+
+SPEC REPOS:
+  trunk:
+    - astrapay-qris
+    - MoEngage-iOS-SDK
+    - MoEngageGeofence
+    - MoEngageInApp
+    - MoEngageInbox
+    - MoEngageRichNotification
+
+SPEC CHECKSUMS:
+  astrapay-qris: 41a4bec69dd22652c785d435ae777c00bd431b8b
+  MoEngage-iOS-SDK: ea23c93daa4206b2bc85145f21891ec44ad2def6
+  MoEngageGeofence: e24388f7f92e530542c0937f55fbf4284fc7a8cd
+  MoEngageInApp: 6e53fdb8ee1cf153a8d4c27f3c1d4597f9b1b01b
+  MoEngageInbox: 836c7d3106993194eb6108f05c0b446e9325378b
+  MoEngageRichNotification: bf262b0f72c69a584321241f1fcfca8ac9abb9c1
+
+PODFILE CHECKSUM: 9eba3abe483aed24fee5de25c4ba6aa15dc22e77
+
+COCOAPODS: 1.15.2
