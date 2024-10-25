@@ -28,14 +28,9 @@ class ViewController: UIViewController{
     }
 
     func setupSDK(){
-        QRConfigurationSdk.AUTH_TOKEN = "" // Insert AUTH TOKEN HERE
         QRConfigurationSdk.BUILD_MODE = .uat
-        QRConfigurationSdk.SDK_TOKEN = "" // Insert SDK TOKEN HERE
-        QRConfigurationSdk.loproVersion = 21
         QRNewRouter.sharedInstance.delegate = self
         QRConfigurationSdk.isSnap = true
-        QRConfigurationSdk.qrisConfirmationVersion = 1
-        QRConfigurationSdk.otpVersion = true
     }
 
 }

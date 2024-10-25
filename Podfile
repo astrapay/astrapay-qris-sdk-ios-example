@@ -18,7 +18,7 @@ end
 target 'example' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'astrapay-qris', '0.5.7'
+  pod 'astrapay-qris', '0.5.8'
   pod 'MoEngage-iOS-SDK' , '~> 9.16.2'
   pod 'MoEngageGeofence','~>5.15.0'
   pod 'MoEngageRichNotification','~>7.15.0'
